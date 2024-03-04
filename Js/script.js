@@ -1,33 +1,3 @@
-// //DATI AUTOPLAY
-// let currentIndex = 0;
-// const totalItems = 5;
-// const intervalTime = 2000;
-
-//  // Funzione per aggiornare il percorso dell'immagine
-// function showItem(index) {
-//     img.src = `img/${index + 1}.webp`;
-// }
-
-// //Funzione passare ad immagine successiva
-// function nextSlide() {
-//     currentIndex = currentIndex + 1;
-
-//     if (currentIndex >= totalItems) {
-//         currentIndex = 0;
-//     }
-
-//     showItem(currentIndex);
-// }
-
-// // Funzione per l'autoplay
-// function startAutoplay() {
-//     // Utilizzo setInterval per richiamare la funzione nextSlide ad intervalli regolari
-//     setInterval(nextSlide, intervalTime);
-// }
-
-// // Autoplay
-// startAutoplay();
-
 
 //Inserisco tutti i prcorsi delle immagini in un array
 // console.log('avvio');
@@ -104,6 +74,37 @@ btnUp.addEventListener('click', function(){
     btnUp.classList.add('hide')
     }
 
-
 })
+
+
+//SECONDO ESERCIZIO
+
+// Imposto l'intervallo di scorrimento
+const autoplayInterval = 3000; 
+let autoplayTimer; // Variabile per memorizzare l'ID dell'intervallo
+
+
+// Utilizzo la funzione startAutoplay 
+startAutoplay();
+
+
+function startAutoplay() {
+    autoplayTimer = setInterval(function () {
+        itemsCollection[counterImg].classList.add('hide'); 
+
+        // Incrementa il contatore o resetta a 0 se è l'ultima immagine
+        counterImg = (counterImg === images.length - 1) ? 0 : ++counterImg;
+
+        // Mostra la nuova immagine
+        itemsCollection[counterImg].classList.remove('hide'); 
+
+        if (counterImg === images.length - 1) {
+            btnUp.classList.add('hide');
+        } else {
+            btnUp.classList.remove('hide');
+        }
+
+        btnDown.classList.remove('hide'); 
+    }, autoplayInterval);
+}
 
