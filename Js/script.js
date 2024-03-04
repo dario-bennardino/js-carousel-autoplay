@@ -1,34 +1,32 @@
-//DATI AUTOPLAY
-let currentIndex = 0;
-const totalItems = 5;
-const intervalTime = 2000;
+// //DATI AUTOPLAY
+// let currentIndex = 0;
+// const totalItems = 5;
+// const intervalTime = 2000;
 
- // Aggiorna il percorso dell'immagine
-function showItem(index) {
-    img.src = `img/${index + 1}.webp`;
-}
+//  // Funzione per aggiornare il percorso dell'immagine
+// function showItem(index) {
+//     img.src = `img/${index + 1}.webp`;
+// }
 
-function nextSlide() {
-    currentIndex = currentIndex + 1;
+// //Funzione passare ad immagine successiva
+// function nextSlide() {
+//     currentIndex = currentIndex + 1;
 
-    if (currentIndex >= totalItems) {
-        currentIndex = 0;
-    }
+//     if (currentIndex >= totalItems) {
+//         currentIndex = 0;
+//     }
 
-    showItem(currentIndex);
-}
+//     showItem(currentIndex);
+// }
 
-// Funzione per l'autoplay
-function startAutoplay() {
-    // Utilizzo setInterval per richiamare la funzione nextSlide ad intervalli regolari
-    setInterval(nextSlide, intervalTime);
-}
+// // Funzione per l'autoplay
+// function startAutoplay() {
+//     // Utilizzo setInterval per richiamare la funzione nextSlide ad intervalli regolari
+//     setInterval(nextSlide, intervalTime);
+// }
 
-// Autoplay
-startAutoplay();
-
-
-
+// // Autoplay
+// startAutoplay();
 
 
 //Inserisco tutti i prcorsi delle immagini in un array
