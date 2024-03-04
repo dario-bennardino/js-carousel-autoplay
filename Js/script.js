@@ -40,41 +40,11 @@ const itemsCollection = document.getElementsByClassName('img');
 //al primo elemento tolgo la classe hide tramite remuve
 itemsCollection[counterImg].classList.remove('hide')
 
-//al click delle frecce incremento o decremento il counter 
 
-//BOTTONE btnDown
-btnDown.addEventListener('click', function(){
-    btnUp.classList.remove('hide')
 
-//rimetto la classe hide all'elemento con l'indice attuale che si incrementa o si decrementa
-itemsCollection[counterImg--].classList.add('hide')
+btnDown.addEventListener('click', showNextImage);
+btnUp.addEventListener('click', showPrevImage);
 
-if(counterImg === 0){
-    btnDown.classList.add('hide')
-}
-
-//tolgo la classe hide all'elemento a indice contatore che si è incrementato o decrementato
-itemsCollection[counterImg].classList.remove('hide')
-})
-
-//BOTTONE btnUp
-btnUp.addEventListener('click', function(){
-
-    btnDown.classList.remove('hide')
-
-    //rimetto la classe hide all'elemento con l'indice attuale che si incrementa o si decrementa
-    itemsCollection[counterImg++].classList.add('hide')
-
-    //tolgo la classe hide all'elemento a indice contatore che si è incrementato o decrementato
-    itemsCollection[counterImg].classList.remove('hide')
-
-    console.log(counterImg);
-
-    if(counterImg === images.length - 1){
-    btnUp.classList.add('hide')
-    }
-
-})
 
 
 //SECONDO ESERCIZIO
@@ -87,6 +57,8 @@ let autoplayTimer; // Variabile per memorizzare l'ID dell'intervallo
 // Utilizzo la funzione startAutoplay 
 startAutoplay();
 
+
+//FUNZIONI
 
 function startAutoplay() {
     autoplayTimer = setInterval(function () {
@@ -107,4 +79,38 @@ function startAutoplay() {
         btnDown.classList.remove('hide'); 
     }, autoplayInterval);
 }
+
+
+function showNextImage() {
+    btnDown.classList.remove('hide')
+
+    //rimetto la classe hide all'elemento con l'indice attuale che si incrementa o si decrementa
+    itemsCollection[counterImg++].classList.add('hide')
+
+    //tolgo la classe hide all'elemento a indice contatore che si è incrementato o decrementato
+    itemsCollection[counterImg].classList.remove('hide')
+
+    console.log(counterImg);
+
+    if(counterImg === images.length - 1){
+    btnUp.classList.add('hide')
+    }
+}
+
+
+function showPrevImage() {
+    btnUp.classList.remove('hide')
+
+    //rimetto la classe hide all'elemento con l'indice attuale che si incrementa o si decrementa
+    itemsCollection[counterImg--].classList.add('hide')
+    
+    if(counterImg === 0){
+        btnDown.classList.add('hide')
+    }
+    
+    //tolgo la classe hide all'elemento a indice contatore che si è incrementato o decrementato
+    itemsCollection[counterImg].classList.remove('hide')
+    }
+
+  
 
