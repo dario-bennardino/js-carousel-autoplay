@@ -6,14 +6,6 @@ const itemsWrapper = document.querySelector('.items-wrapper');
 const btnUp = document.querySelector('.btn-up');
 const btnDown = document.querySelector('.btn-down');
 
-//Dati nuovo esercizio
-const newItemsWrapper = document.querySelector('.new-items-wrapper');
-
-const newItemsCollection = document.getElementsByClassName('new-img');
-
-let newCounterImg = 0;
-
-
 
 //nascondo il bottone btnDown di default
 btnDown.classList.add('hide')
@@ -65,49 +57,6 @@ let autoplayTimer; // Variabile per memorizzare l'ID dell'intervallo
 
 // Utilizzo la funzione startAutoplay 
 startAutoplay();
-
-
-
-//INIZIO NUOVO ESERCIZIO
-
-const newImages = [
-    {
-    
-    url:'img/01.webp',
-      titolo: 'Spiderman',
-      descrizione: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam est quisquam esse sapiente cumque deleniti placeat nemo obcaecati. Exercitationem suscipit odit praesentium.',
-    },
-    {
-        url:'img/02.webp',
-        titolo: 'Dog',
-        descrizione: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam est quisquam esse sapiente cumque deleniti placeat nemo obcaecati.',
-    },
-    {
-        url:'img/03.webp',
-        titolo: 'Starwars',
-        descrizione: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam est quisquam esse sapiente cumque',
-    },
-    {
-        url:'img/04.webp',
-        titolo: 'Cat',
-        descrizione: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    },
-    {
-        url:'img/05.webp',
-        titolo: 'Marvel',
-        descrizione: 'I magnifici super eroi',
-    }
-]
-
-
-
-
-// Aggiungi un ciclo per creare il markup delle nuove immagini
-for (let i = 0; i < newImages.length; i++) {
-    const newImg = newImages[i];
-   
-}
-
 
 
 
